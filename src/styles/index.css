@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --app-bg: #f6f4ef;
+  --app-bg-soft: #efe8dc;
+  --app-surface: #ffffff;
+  --app-surface-strong: #fff7ea;
+  --app-border: rgba(15, 23, 42, 0.12);
+  --app-text: #0f172a;
+  --app-text-soft: rgba(15, 23, 42, 0.68);
+  --app-muted: rgba(15, 23, 42, 0.48);
+  --app-primary: #0f766e;
+  --app-primary-weak: rgba(15, 118, 110, 0.14);
+  --app-warning: #b45309;
+  --app-success: #15803d;
+  --app-danger: #dc2626;
+  --app-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --app-bg: #07111f;
+  --app-bg-soft: #0f172a;
+  --app-surface: rgba(15, 23, 42, 0.86);
+  --app-surface-strong: rgba(30, 41, 59, 0.92);
+  --app-border: rgba(148, 163, 184, 0.16);
+  --app-text: #e2e8f0;
+  --app-text-soft: rgba(226, 232, 240, 0.72);
+  --app-muted: rgba(226, 232, 240, 0.56);
+  --app-primary: #2dd4bf;
+  --app-primary-weak: rgba(45, 212, 191, 0.16);
+  --app-warning: #f59e0b;
+  --app-success: #22c55e;
+  --app-danger: #f87171;
+  --app-shadow: 0 24px 80px rgba(2, 6, 23, 0.42);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'IBM Plex Sans',
+    'Noto Sans SC',
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Microsoft YaHei',
+    sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(45, 212, 191, 0.12), transparent 32%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 28%),
+    linear-gradient(180deg, var(--app-bg) 0%, color-mix(in srgb, var(--app-bg) 88%, #ffffff 12%) 100%);
+  color: var(--app-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.28);
+}
+
+.app-shell-frame {
+  background:
+    linear-gradient(135deg, rgba(45, 212, 191, 0.08), transparent 36%),
+    linear-gradient(315deg, rgba(245, 158, 11, 0.06), transparent 28%),
+    var(--app-bg);
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 90%);
+  opacity: 0.35;
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
