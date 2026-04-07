@@ -44,8 +44,9 @@ const metrics = computed(() => {
 
 <template>
   <svg
-    class="w-full"
+    class="block h-[140px] w-full"
     :viewBox="`0 0 ${metrics.width} ${metrics.height}`"
+    preserveAspectRatio="none"
     role="img"
     aria-hidden="true"
   >
@@ -56,13 +57,13 @@ const metrics = computed(() => {
       </linearGradient>
     </defs>
     <path :d="metrics.area" fill="url(#sparkline-gradient)" />
-    <path :d="metrics.path" fill="none" :stroke="tone ?? 'var(--app-primary)'" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path :d="metrics.path" fill="none" :stroke="tone ?? 'var(--app-primary)'" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
     <circle
       v-for="point in metrics.points"
       :key="`${point.x}-${point.y}`"
       :cx="point.x"
       :cy="point.y"
-      r="3.2"
+      r="2.8"
       :fill="tone ?? 'var(--app-primary)'"
       class="drop-shadow-sm"
     />

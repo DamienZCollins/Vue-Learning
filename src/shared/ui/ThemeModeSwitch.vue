@@ -35,7 +35,7 @@ function cycleMode() {
 
 <template>
   <button
-    class="inline-flex items-center gap-2 rounded-full border border-[color:var(--app-border)] bg-[color:var(--app-surface)] px-3 py-2 text-sm font-medium text-[var(--app-text)] transition hover:-translate-y-0.5 hover:shadow-lg"
+    class="inline-flex whitespace-nowrap items-center gap-2 rounded-full border border-[color:var(--app-border)] bg-[color:var(--app-surface)] px-3 py-2 text-sm font-medium text-[var(--app-text)] transition hover:-translate-y-0.5 hover:shadow-lg"
     type="button"
     @click="cycleMode"
   >

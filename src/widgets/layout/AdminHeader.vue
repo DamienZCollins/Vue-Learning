@@ -17,8 +17,8 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 rounded-[28px] border border-[color:var(--app-border)] bg-[color:var(--app-surface)] px-4 py-4 shadow-[var(--app-shadow)] md:flex-row md:items-center md:justify-between">
-    <div class="flex items-center gap-3">
+  <div class="flex flex-col gap-4 rounded-[28px] border border-[color:var(--app-border)] bg-[color:var(--app-surface)] px-4 py-4 shadow-[var(--app-shadow)] xl:flex-row xl:items-center xl:justify-between">
+    <div class="flex min-w-0 items-center gap-3">
       <el-button
         circle
         plain
@@ -38,11 +38,11 @@ const emit = defineEmits<{
       </div>
     </div>
 
-    <div class="flex flex-wrap items-center gap-3">
+    <div class="flex flex-nowrap items-center gap-3 overflow-x-auto pb-1 xl:justify-end">
       <ThemeModeSwitch />
       <el-button
         plain
-        class="!border-[color:var(--app-border)] !bg-transparent"
+        class="!border-[color:var(--app-border)] !bg-transparent !whitespace-nowrap"
         @click="emit('logout')"
       >
         <AppIcon name="SwitchButton" class="mr-2 text-base" />

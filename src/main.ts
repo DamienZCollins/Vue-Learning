@@ -7,6 +7,7 @@ import { useSettingsStore } from '@/stores/settings'
 import { installRouterGuards } from '@/router/guards'
 import { router } from '@/router'
 import App from './App.vue'
+import 'element-plus/dist/index.css'
 import './styles/index.css'
 
 const app = createApp(App)

@@ -27,7 +27,11 @@ defineProps<{
     </template>
 
     <div class="grid gap-4 lg:grid-cols-3">
-      <div v-for="item in series" :key="item.label" class="rounded-3xl border border-[color:var(--app-border)] bg-[color:var(--app-surface-strong)] p-4">
+      <div
+        v-for="item in series"
+        :key="item.label"
+        class="rounded-3xl border border-[color:var(--app-border)] bg-[color:var(--app-surface-strong)] p-4 shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
+      >
         <div class="flex items-center justify-between gap-4">
           <div>
             <p class="text-sm font-medium text-[var(--app-text)]">
